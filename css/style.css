@@ -1,3 +1,108 @@
-.cor-bg{
-    background-color:black ;
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    width: auto;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 1px 1px 5px rgba(70, 68, 68, 0.5);
+
+}
+
+header div img {
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+.imagem{
+    width: 10px;
+    height: 10px;
+}
+.meno .abas{
+    margin: auto 10px;
+}
+.meno{
+    display: flex;
+    flex-direction:row;
+    
+    
+}
+.abas:hover{
+    transform: scale(1.1);
+    background-color: rgba(199, 219, 255, 0.8);
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+
+.meno .abas a{
+    text-decoration: none;
+    color: rgba(109, 110, 184, 0.9);
+    font-size: 20px;
+}
+
+.abas:nth-child(1) {
+    background-color: rgba(93, 93, 93,0.2);
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+
+.abas{
+    padding: 0.5rem;
+    border-radius: 10px;
+    transition-duration: 0.5s;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main section{
+    width: 50%;
+    height: 700px;
+    background-color: rgba(130, 130, 130, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+main section .nionnio{
+    display: flex;
+    flex-direction: row;
+    
+}
+.ioni{
+    width: 300px;
+    height: 80px;
+    background-color: rgb(56, 56, 56);
+    margin-right: 30px;
+    margin: 10px auto;
+    text-align: center;
+    padding-top: 10px;
+}
+.ioni:nth-child(2){
+    background-color: rgb(199, 115, 223);
+}
+
+.tpondas{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+.ondas{
+    width: 100px;
+    height: 300px;
+    background-color: gray;
+    margin: 2px;
+    text-align: center;
+    padding-top: 8px;
+
+}
+.ondas:nth-child(3){
+    background-color: red;
+}
+.ondas:nth-child(4){
+    background-image: linear-gradient(red, orange, yellow, green, aqua, blue, violet);
+}
+.ondas:nth-child(5){
+    background-color: rgb(152, 68, 152);
 }
