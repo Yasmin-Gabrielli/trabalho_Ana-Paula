@@ -1,36 +1,45 @@
+/* --- ESTILOS GERAIS --- */
 *{
     margin:0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Boa prática, já estava lá */
 }
+
+/* --- HEADER / CABEÇALHO --- */
 header{
-    width: auto;
-    height: 80px;
+    width: 100%; /* Ocupa 100% da largura */
+    min-height: 80px; /* Altura mínima, mas pode crescer */
+    height: auto; /* Altura automática para caber o conteúdo */
     display: flex;
     justify-content: space-between;
+    align-items: center; /* Centraliza verticalmente */
     box-shadow: 1px 1px 5px rgba(70, 68, 68, 0.5);
-
+    padding: 10px 5%; /* Adiciona preenchimento lateral */
+    flex-wrap: wrap; /* Permite que o menu quebre a linha se necessário */
 }
 
 header div img {
     width: 60px;
     height: 60px;
-    margin-top: 10px;
-    margin-left: 30px;
+    /* Margin-top e margin-left removidos para o flexbox controlar */
 }
+
 .imagem{
-    width: 10px;
-    height: 10px;
+    /* Não precisa mais de width/height, a imagem já tem */
 }
-.meno .abas{
-    margin: auto 10px;
-}
+
 .meno{
     display: flex;
     flex-direction:row;
-    
-    
+    align-items: center; /* Alinha os itens do menu */
+    flex-wrap: wrap; /* Permite que os itens do menu quebrem a linha */
+    justify-content: center; /* Centraliza o menu em telas menores */
 }
+
+.meno .abas{
+    margin: 5px 10px; /* Margem vertical e horizontal */
+}
+
 .abas:hover{
     transform: scale(1.1);
     background-color: rgba(199, 219, 255, 0.8);
@@ -57,27 +66,44 @@ header div img {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* --- MAIN / CONTEÚDO PRINCIPAL --- */
 main section{
-    width: 50%;
-    height: 700px;
+    /* MUDANÇA: de 50% para 90% para ser maior, mas centralizado */
+    width: 90%; 
+    max-width: 1200px; /* Limite máximo em telas grandes */
+    margin: 20px auto; /* Centraliza a section */
+    
+    /* MUDANÇA: de 700px fixo para 'auto' */
+    height: auto; 
+    min-height: 500px; /* Altura mínima */
+    padding-bottom: 20px; /* Espaçamento inferior */
+
     background-color: rgba(130, 130, 130, 0.3);
     display: flex;
     flex-direction: column;
 }
+
 main section .nionnio{
     display: flex;
     flex-direction: row;
-    
+    justify-content: center; /* Centraliza os itens */
+    flex-wrap: wrap; /* PERMITE QUEBRA DE LINHA */
 }
+
 .ioni{
-    width: 300px;
+    /* MUDANÇA: flex-basis define o tamanho base, mas pode crescer/encolher */
+    flex-basis: 300px; 
+    flex-grow: 1; /* Permite crescer */
+    max-width: 45%; /* Em telas grandes, força 2 colunas */
+    min-width: 250px; /* Largura mínima */
+
     height: 80px;
     background-color: rgb(56, 56, 56);
-    margin-right: 30px;
-    margin: 10px auto;
+    margin: 10px; /* Margem simplificada */
     text-align: center;
     padding-top: 10px;
 }
+
 .ioni:nth-child(2){
     background-color: rgb(199, 115, 223);
 }
@@ -86,8 +112,114 @@ main section .nionnio{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    
+    flex-wrap: wrap; /* !!! MUDANÇA MAIS IMPORTANTE !!! */
 }
+
+.ondas{
+    /* MUDANÇA: flex-basis e grow substituem 'width: 100px' */
+    flex-basis: 100px; /* Tamanho base */
+    flex-grow: 1; /* Pode crescer */
+    max-width: 130px; /* Limite máximo de largura */
+    
+    height: 250px; /* MUDANÇA: Altura reduzida para caber melhor */
+    margin: 5px; /* Espaçamento entre os blocos */
+    
+    /* MUDANÇA: Centraliza o texto verticalmente e horizontalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* padding-top: 8px; (Não é mais necessário) */
+
+    /* Efeitos do JS (cursor, etc.) */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de hover (do JS) */
+.ondas:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.ondas:nth-child(3){
+    background-color: red;
+}
+.ondas:nth-child(4){
+    background-image: linear-gradient(red, orange, yellow, green, aqua, blue, violet);
+}
+.ondas:nth-chixld(5){
+    background-color: rgb(152, 68, 152);
+}
+
+
+/* ########################################## */
+/* ###      REGRAS DE RESPONSIVIDADE      ### */
+/* ########################################## */
+
+/* Para telas menores que 768px (tablets e celulares) */
+@media (max-width: 768px) {
+    
+    /* Empilha o logo e o menu */
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    /* Centraliza a logo */
+    header div img {
+        margin: 0 0 10px 0;
+    }
+
+    /* Menu fica em coluna */
+    .meno {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .abas {
+        margin: 5px 0;
+        width: 80%; /* Ocupa mais espaço */
+        text-align: center;
+    }
+
+    main section {
+        width: 100%; /* Ocupa 100% em telas pequenas */
+        margin-top: 0;
+    }
+
+    /* Empilha os títulos "Ionizantes" */
+    .nionnio {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ioni {
+        width: 90%; /* Ocupa 90% da largura */
+        max-width: none; /* Remove o limite de 45% */
+        margin: 10px 0;
+    }
+
+    /* As ondas agora ficam 2 a 2 */
+    .ondas {
+        flex-basis: 40%; /* Define a base para 2 colunas */
+        height: 150px; /* Altura bem menor para celular */
+    }
+}
+
+
+/* Para telas muito pequenas (celulares) */
+@media (max-width: 480px) {
+
+    /* As ondas ficam 1 por 1 (empilhadas) */
+    .ondas {
+        flex-basis: 80%; /* Ocupa 80% da largura */
+        height: 100px; /* Ainda mais baixas */
+    }
+}
+
+/* ... seu CSS existente ... */
+
 .ondas{
     width: 100px;
     height: 300px;
@@ -96,13 +228,17 @@ main section .nionnio{
     text-align: center;
     padding-top: 8px;
 
+    /* ADIÇÕES: */
+    cursor: pointer; /* Muda o mouse para uma "mãozinha" */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave */
 }
+
+/* ADIÇÃO: Efeito ao passar o mouse */
+.ondas:hover{
+    transform: scale(1.05); /* Aumenta levemente */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Adiciona uma sombra */
+}
+
+
 .ondas:nth-child(3){
-    background-color: red;
-}
-.ondas:nth-child(4){
-    background-image: linear-gradient(red, orange, yellow, green, aqua, blue, violet);
-}
-.ondas:nth-child(5){
-    background-color: rgb(152, 68, 152);
-}
+/* ... etc ... */}
