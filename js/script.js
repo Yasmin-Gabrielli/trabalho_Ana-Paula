@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // 1. Objeto com todas as informações das ondas
     // As chaves (ex: "Ondas de rádio") devem ser IDÊNTICAS ao texto nos seus divs
+    
     const waveData = {
         "Ondas de rádio": {
             icon: "bi-broadcast", // Ícone do Bootstrap
@@ -117,3 +118,4 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
