@@ -79,7 +79,7 @@ O site demonstra domínio sobre os seguintes conceitos:
 
 ## 👩‍💻 Autora
 
-<a href="[https://github.com/SEU_USUARIO_AQUI](https://github.com/Yasmin-Gabrielli)">
+<a href="https://github.com/Yasmin-Gabrielli">GitHub </a>
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/SEU_ID_AQUI?v=4" width="100px;" alt=""/>
  <br />
  <sub><b>Yasmin Gabriélli</b></sub>
