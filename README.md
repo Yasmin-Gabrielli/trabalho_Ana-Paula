@@ -24,7 +24,7 @@
 ---
 
 <div align="center"> 
-  <img src="./img/preview.png" alt="Demonstração do Site" width="100%">
+  <img src="./img/icon/icon.png" alt="Demonstração do Site" width="100%">
   <em>(Adicione um print do seu site na pasta img com o nome preview.png para aparecer aqui)</em>
 </div>
 
