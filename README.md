@@ -82,7 +82,7 @@ O site demonstra domínio sobre os seguintes conceitos:
 <a href="https://github.com/Yasmin-Gabrielli">GitHub </a>
 <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/SEU_ID_AQUI?v=4" width="100px;" alt=""/>
  <br />
- <sub><b>Yasmin Gabriélli</b></sub>
+ <h5><b>Yasmin Gabriélli</b></h5>
 </a>
 
 <br/>
