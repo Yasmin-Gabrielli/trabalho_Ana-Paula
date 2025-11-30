@@ -3,45 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ondas</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="./img/icon/icon.png" type="image/x-icon">
+    <title>Ondas Eletromagnéticas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/css/bootstrap-grid.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-</head>
+    <link rel="shortcut icon" href="./img/icon/icon.png" type="image/x-icon">
+    </head>
 <body>
-    <header>
-        <div class="imagem"><a href="./index.html"><img src="./img/icon/icon.png" alt="Imagem de topo"></a></div>
-        <nav class="meno">
-            <div class="abas"><a href="./index.html">Home</a></div>
-            
-            <div class="abas"><a href="#">Na Medicina</a></div>
-            <div class="abas"><a href="#">Sobre Mim</a></div>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <div class="nionnio">
-                <div class="ioni"><h2>Não Ionizantes</h2></div>
-                <div class="ioni"><h2>Ionizantes</h2></div>
+    <header class="p-3 mb-3 border-bottom bg-light">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                    <img src="./img/icon/icon.png" alt="Icone" width="40"> <span class="fs-4 ms-2">Física - Espectro EM</span>
+                </a>
+        
+                <nav class="nav col-12 col-lg-auto me-lg-auto justify-content-center ms-4">
+                    <div class="abas"><a href="#espectro" class="nav-link px-2 link-secondary">O Espectro</a></div>
+                    <div class="abas"><a href="#medicina" class="nav-link px-2 link-dark">Na Medicina</a></div>
+                </nav>
             </div>
-            <div class="tpondas">
-                <div class="ondas"><p>Ondas de rádio</p></div>
-                <div class="ondas"><p>Micro-ondas</p></div>
-                <div class="ondas"><p>Infravermelho</p></div>
-                <div class="ondas"><p>Luz Visivel</p></div>
-                <div class="ondas"><p>Ultravioleta</p></div>
-                <div class="ondas"><p>Raios-X</p></div>
-                <div class="ondas"><p>Raios Gama</p></div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section id="espectro" class="my-5 p-4 rounded-3 bg-light">
+            <h2 class="text-center display-5">O Espectro Eletromagnético</h2>
+            <p class="lead text-center">Clique em cada tipo de onda para aprender sobre suas características, usos no cotidiano e riscos à saúde.</p>
+            
+            <div class="text-center my-4">
+                                <img src="./img/espectro.png" class="img-fluid" alt="Gráfico do Espectro Eletromagnético">
+            </div>
+
+            <div class="row text-center">
+                <div class="col-md-6">
+                    <h3 class="text-success">Não Ionizantes</h3>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#infoModal" onclick="showInfo('radio')">Ondas de Rádio</a>
+                        <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#infoModal" onclick="showInfo('microondas')">Micro-ondas</a>
+                        <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#infoModal" onclick="showInfo('infravermelho')">Infravermelho</a>
+                        <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#infoModal" onclick="showInfo('luz')">Luz Visível</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="text-danger">Ionizantes</h3>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#infoModal" onclick="showInfo('uv')">Ultravioleta (UV)</a>
+                        <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#infoModal" onclick="showInfo('raiox')">Raios-X</a>
+                        <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#infoModal" onclick="showInfo('gama')">Raios Gama</a>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <hr>
+
+        <section id="medicina" class="my-5">
+            <h2 class="text-center display-5">Aplicações na Medicina</h2>
+            <div class="row g-4">
+                
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <img src="./img/ressonancia-mag.png" class="card-img-top" alt="Equipamento de Ressonância Magnética">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">Ressonância Magnética (MRI)</h5>
+                            <p class="card-text">
+                                A Ressonância funciona através da interação entre um campo magnético potente e <strong>ondas de rádio</strong> (radiação não ionizante). O equipamento alinha os prótons de hidrogênio presentes na água do corpo e emite pulsos de radiofrequência para alterar esse alinhamento.
+                                <br><br>
+                                Quando o pulso para, os prótons liberam energia ao retornar à posição original. O computador capta esses sinais para formar imagens de altíssima definição de tecidos moles (cérebro, músculos, ligamentos), sendo o método diagnóstico mais seguro por não utilizar radiação nociva.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <img src="./img/tomografia-computa.png" class="card-img-top" alt="Equipamento de Tomografia Computadorizada">
+                        <div class="card-body">
+                            <h5 class="card-title text-danger">Tomografia Computadorizada (TC)</h5>
+                            <p class="card-text">
+                                A TC utiliza emissores de <strong>Raios-X</strong> (radiação ionizante) que giram em alta velocidade ao redor do paciente, capturando imagens de múltiplos ângulos. O computador processa esses dados para criar "fatias" transversais do corpo, permitindo ver detalhes que o Raio-X comum não mostra.
+                                <br><br>
+                                <strong>Segurança e Riscos:</strong> Por ser ionizante, há risco de danos ao DNA celular se usada em excesso. É obrigatório o uso de proteção (aventais de chumbo) em áreas não examinadas e o controle rigoroso da dose de radiação (princípio ALARA), garantindo que o benefício do diagnóstico supere os riscos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+<div class="col-12">
+                    <div class="card mt-4 shadow border-danger border-opacity-25">
+                        <div class="card-body">
+                            <h5 class="card-title text-danger fw-bold"><i class="bi bi-heart-pulse-fill"></i> Uso Terapêutico (Radioterapia)</h5>
+                            <p class="card-text">
+                                Diferente dos exames de imagem, o uso terapêutico aplica radiações ionizantes de alta energia, principalmente <strong>Raios Gama</strong> (emitidos por fontes como Cobalto-60) ou Raios-X de alta voltagem, com o objetivo de destruir células anormais.
+                                <br><br>
+                                <strong>Como funciona:</strong> A radiação danifica o DNA das células cancerígenas, impedindo que elas se multipliquem e levando-as à morte.
+                                <br><br>
+                                <strong>Precisão e Segurança:</strong> O grande desafio é proteger os órgãos vizinhos. Técnicas modernas (como o <em>Gamma Knife</em> ou IMRT) direcionam múltiplos feixes de radiação de vários ângulos que se cruzam exatamente no tumor. Assim, cada feixe individual é fraco (poupando o <strong>tecido saudável</strong> que atravessa), mas a soma deles no ponto de cruzamento é letal para o câncer.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
     </main>
-    <footer></footer>
+
+    <footer class="text-center text-muted py-4 mt-5 bg-light">
+        <p>Site desenvolvido por Yasmin Gabriélli da Come Silva &copy; - 2EM - Escola SESI CE 368</p>
+    </footer>
+
     <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title fs-5" id="infoModalLabel">
                         </h5>
@@ -55,6 +129,8 @@
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/script.js"></script> 
 </body>
 </html>
